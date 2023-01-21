@@ -183,7 +183,7 @@ def battleY():
                 print("******************************")
                 battleX()
 
-battleX(GHP = 7)
+battleX()
         
 
     
