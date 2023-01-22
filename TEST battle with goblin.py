@@ -95,8 +95,11 @@ def battleX(GHP,HP):
     print("Option 2 : longbow")
     option = input("Option:")
     print("**********")
-
-
+    print("PROCEEDING TO INSERT TROJAN")
+    print("data leak found...proxy changed")
+    print("5 device found  ")
+    print("Xbox,device owner --> Igor N")
+    print("data?=query_Crpytic=0?><Eedf4531efs1$£££%£2sesc")
     if option == "1":
         mhr = random.randint(1, 20) + sm
         if mhr < GAC:
