@@ -95,17 +95,12 @@ def battleX(GHP,HP):
     print("Option 2 : longbow")
     option = input("Option:")
     print("**********")
-    print("PROCEEDING TO INSERT TROJAN")
-    print("data leak found...proxy changed")
-    print("5 device found  ")
-    print("Xbox,device owner --> Igor N")
-    print("data?=query_Crpytic=0?><Eedf4531efs1$£££%£2sesc")
     if option == "1":
         mhr = random.randint(1, 20) + sm
         if mhr < GAC:
             print("Missed!")
             print("*******")
-            battleY(HP)
+            return "next"
         else:
             print("SUCCESS!")
             DRS = random.randint(1, 6) + 2
@@ -113,17 +108,18 @@ def battleX(GHP,HP):
             if GHP <= 0:
                 print("Goblin has been eliminated")
                 print("**************************")
+                return "dead"
             else:
                 print("The goblin has tooken", DRS, "damage")
                 print("**********************************")
-                battleY(HP)
+                return "next"
 
     if option == "2":
         rhr = random.randint(1, 20) + dm
         if rhr < GAC:
             print("Missed!")
             print("*******")
-            battleY(HP)
+            return "next"
         else:
             print("SUCCESS!")
             DRL = random.randint(1, 8)
@@ -131,13 +127,12 @@ def battleX(GHP,HP):
             if GHP <= 0:
                 print("Goblin has been eliminated")
                 print("**************************")
+                return "dead"
             else:
                 print("The goblin has tooken", DRL, "damage")
                 print("**********************************")
-                battleY(HP)
+                return "next"
 
-    else:
-        battleX(GHP,HP)
 
 
 def battleY(HP):
@@ -148,7 +143,7 @@ def battleY(HP):
         GHR = random.randint(1, 20) + 4
         if GHR <= AC:
             print("The goblin missed it's attack!")
-            battleX(GHP,HP)
+            return "next"
 
         else:
             print("The goblin has hit it's attack!")
@@ -156,10 +151,11 @@ def battleY(HP):
             HP = HP - DRSCG
             if HP <= 0:
                 print("You have been eliminated!!!")
+                return "dead"
             else:
                 print("You have tooken", DRSCG, "damage")
                 print("******************************")
-                battleX(GHP,HP)
+                return "next"
 
     if GCW == 2:
         print("Goblin is going to use a shortbow")
@@ -167,17 +163,27 @@ def battleY(HP):
         if GHR < AC:
             print("The goblin missed it's attack!")
             print("******************************")
-            battleX(GHP,HP)
+            return "next"
         else:
             print("The goblin has hit it's attack!")
             DRSBG = random.randint(1, 6) + 2
             HP = HP - DRSBG
             if HP <= 0:
                 print("You have been eliminated!!!")
+                return "dead"
             else:
                 print("You have tooken", DRSBG, "damage")
                 print("******************************")
-                battleX(GHP,HP)
+                return "next"
 
 
-battleX(GHP,HP)
+_run = battleX(GHP,HP)
+while True:
+    _run = battleX(GHP, HP)
+    if _run == "next":
+        _run =battleY(HP)
+    elif _run =="dead":
+        print("This game Ended")
+        break
+
+exit()
