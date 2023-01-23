@@ -136,7 +136,7 @@ def battleX(GHP,HP):
 
 
 def battleY(HP):
-    GCW = random.randint(0, 2)
+    GCW = random.randint(1, 2)
 
     if GCW == 1:
         print("Goblin is going to use a scimitar")
